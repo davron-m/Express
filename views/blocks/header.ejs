@@ -4,9 +4,9 @@
         <a href="/">Главная</a>
         <a href="/user">Пользователь</a>
     </nav>
-    <form>
-        <input type="text" placeholder="Имя пользователья">
-        <button>Поиск</button>
+    <form method="post" action="/check-user">
+        <input type="text" name="username" placeholder="Имя пользователья">
+        <button type="submit">Поиск</button>
     </form>
 
 </header>

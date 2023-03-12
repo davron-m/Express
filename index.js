@@ -4,6 +4,7 @@ const app = express()
 
 
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({extended: false}))
 app.use(express.static('public'))
 
 
@@ -19,6 +20,14 @@ app.get('/', (req, res) =>{
 
 app.get('/about', (req, res) =>{
     res.send('About us')
+})
+
+app.post('/check-user', (req, res) => {
+    let username = req.body.username
+    if (username == "")
+        return res.redirect('/')
+    else 
+        return res.redirect('/user/' + username)
 })
 
 /*app.get('/user/:username/:id', (req, res) =>{
